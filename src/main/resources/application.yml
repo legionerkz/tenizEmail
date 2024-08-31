@@ -1,0 +1,10 @@
+spring:
+    application:
+        name: EmailService
+
+server:
+    port: 8180
+
+logging:
+    level:
+        root: info
