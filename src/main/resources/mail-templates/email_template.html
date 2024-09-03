@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenizcap Payment Notification</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #f0f4f8;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            width: 150px;
+            height: auto;
+        }
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #0056b3;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #555555;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .highlight {
+            background-color: #e6f3ff;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .amount {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .button {
+            display: inline-block;
+            background-color: #0056b3;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #003d82;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #6c757d;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <img src="https://tenizcap.kz/teniz-logo-big.png" alt="Tenizcap Logo">
+    </div>
+    <div class="content">
+        <h1 th:text="'Здравствуйте, ' + ${name} + '!'"></h1>
+        <p>Мы рады сообщить вам о недавнем пополнении вашего счета.</p>
+
+        <div class="highlight">
+            <p>Счет: <strong th:text="${account}"></strong></p>
+            <p>Сумма: <span class="amount" th:text="${amount} + ' ' + ${currency}"></span></p>
+            <p>Тип операции: Выплата купона по ценным бумагам KZOKZ26</p>
+        </div>
+
+        <p>Ваши инвестиции работают на вас! Продолжайте следить за своим портфелем и пользуйтесь всеми преимуществами нашей платформы.</p>
+
+        <a href="https://tenizcap.kz/dashboard" class="button">Перейти в личный кабинет</a>
+    </div>
+    <div class="footer">
+        <p>© 2024 Tenizcap. Все права защищены.</p>
+        <p>Если у вас возникли вопросы, пожалуйста, свяжитесь с нашей службой поддержки.</p>
+    </div>
+</div>
+</body>
+</html>
